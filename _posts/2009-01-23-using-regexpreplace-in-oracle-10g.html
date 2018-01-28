@@ -1,0 +1,14 @@
+---
+layout: post
+title: Using REGEXP_REPLACE in oracle 10g
+date: '2009-01-23T10:33:00.001-08:00'
+author: Bryan
+tags:
+- Oracle
+- Regex
+modified_time: '2009-09-23T09:04:19.135-07:00'
+blogger_id: tag:blogger.com,1999:blog-19111454.post-7185724602152626943
+blogger_orig_url: http://www.bryansgeekspeak.com/2009/01/using-regexpreplace-in-oracle-10g.html
+---
+
+I ran into an issue where I need to update all matching records in a table so that their clob content changed all instances of <br /><div class="code">&lt;a href="javascript:CustomHandler(unknownnumberofcharacters@someurl);"&gt;somelinkname&lt;/a&gt;<br /></div>to<br /><div class="code">&lt;a href="someurl"&gt;somelinkname&lt;/a&gt;<br /></div><br />I ended up using a regular expression with the REGEXP_REPLACE oracle command to do the work.<br /><div class="code">UPDATE mytable SET myclob = REGEXP_REPLACE(myclob,'javascript:CustomHandler[^@]*@([[:alnum:][:punct:][:space:]]+)\);','\1')<br />WHERE REGEXP_LIKE(myclob,'javascript:CustomHandler');<br /></div><br />The real trick was using the POSIX character classes rather than matching on the dot wildcard.  Using the dot to match any character worked only when one match was found in the clob content.  In cases where I expected more than one match, it did all kinds of strange subtitutions that I didnt expect.  So now I know to avoid using the dot wildcard in regex if at all possible XD<br /><br />For more info on oracle 10g regex, check out <a href="http://www.oracle.com/technology/oramag/webcolumns/2003/techarticles/rischert_regexp_pt2.html">http://www.oracle.com/technology/oramag/webcolumns/2003/techarticles/rischert_regexp_pt2.html</a>, its got some great examples, lists out all the available character classes, etc.

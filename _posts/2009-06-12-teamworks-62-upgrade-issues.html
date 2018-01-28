@@ -1,0 +1,15 @@
+---
+layout: post
+title: Teamworks 6.2 Upgrade Issues
+date: '2009-06-12T13:15:00.000-07:00'
+author: Bryan
+tags:
+- Teamworks
+- Lombardi
+modified_time: '2010-01-13T09:18:11.355-08:00'
+thumbnail: http://1.bp.blogspot.com/_It8-g3_9vec/SjK5wfbzuJI/AAAAAAAAAro/60Ml6zqfXag/s72-c/Where_the_error_is_logged_by_teamworks.JPG
+blogger_id: tag:blogger.com,1999:blog-19111454.post-5826872945350334433
+blogger_orig_url: http://www.bryansgeekspeak.com/2009/06/teamworks-62-upgrade-issues.html
+---
+
+I've spent a lot of time troubleshooting bizarre issues in upgrading from Teamworks 6.1 to 6.2, most of which end up being the result of the process server being out of sync with the performance server.  The upgrade usually fails when running the database upgrade script, where the script runs checks to determine exactly that: are the tracking definitions out of sync.<br /><br />I was able to recover in my last upgrade situation after tracking down the error to a specific issue.  The database upgrade script failed with the usual message about the definitions being out of sync, but after poking through the performance server logs I found the exact error:<br /><br />"...the tracking group <some-key> has 54 fields of type string. The maximum is 50."<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://1.bp.blogspot.com/_It8-g3_9vec/SjK5wfbzuJI/AAAAAAAAAro/60Ml6zqfXag/s1600-h/Where_the_error_is_logged_by_teamworks.JPG"><img style="cursor:pointer; cursor:hand;width: 320px; height: 224px;" src="http://1.bp.blogspot.com/_It8-g3_9vec/SjK5wfbzuJI/AAAAAAAAAro/60Ml6zqfXag/s320/Where_the_error_is_logged_by_teamworks.JPG" border="0" alt=""id="BLOGGER_PHOTO_ID_5346539950365194386" /></a><br /><br />What this means is that Teamworks only supports up to 50 tracking fields in a given BPD.  I doubt anyone would ever know about this, since the errors only happen in the server logs, the user in the eclipse IDE never sees them even when they add more than 50 tracking variables.<br /><br />Anyway, I was able to track down the offending BPD and remove 4 tracking variables from the list being tracked.  After sending definitions to the performance server, I was able to re-run the upgrade and it was smooth sailing after that.<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://1.bp.blogspot.com/_It8-g3_9vec/SjK7fK5MHzI/AAAAAAAAArw/5f5DGEekvtY/s1600-h/Where_Tracking_happens_in_bpd.JPG"><img style="cursor:pointer; cursor:hand;width: 320px; height: 231px;" src="http://1.bp.blogspot.com/_It8-g3_9vec/SjK7fK5MHzI/AAAAAAAAArw/5f5DGEekvtY/s320/Where_Tracking_happens_in_bpd.JPG" border="0" alt=""id="BLOGGER_PHOTO_ID_5346541851816763186" /></a>

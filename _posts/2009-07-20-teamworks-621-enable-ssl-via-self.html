@@ -1,0 +1,15 @@
+---
+layout: post
+title: Teamworks 6.2.1 - Enable SSL via a self signed cert
+date: '2009-07-20T16:14:00.001-07:00'
+author: Bryan
+tags:
+- Teamworks
+- Tutorial Video
+- Lombardi
+modified_time: '2009-09-23T16:05:16.476-07:00'
+blogger_id: tag:blogger.com,1999:blog-19111454.post-6563145779614926278
+blogger_orig_url: http://www.bryansgeekspeak.com/2009/07/teamworks-621-enable-ssl-via-self.html
+---
+
+<object width="640" height="385"><param name="movie" value="http://www.youtube.com/v/eVCR6owCO_I&hl=en&fs=1&hd=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/eVCR6owCO_I&hl=en&fs=1&hd=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="385"></embed></object><br /><br />A quick demo of how to configure SSL with a self signed cert, and where to go to configure SSL links by default in the portal for Teamworks 6.2 sp1 (this should work for all versions of Teamworks 6).<br /><br />If you need to request valid certs, you'll have a little more command line work to do - generating the cert request then importing the issued cert and any CA certs required by the CA.  That part is not covered here.<br /><br /><b>-- UPDATE --</b><br /><br />After doing the above config for SSL, I keep getting an error in the author environment referring to an "SSLHandshakeException" when I open a service to make changes.  If I close that error dialog box, I can still edit the service, so I'm not sure if its a "critical" error or not.  I ended up editing the 99local.xml file, slowly changing all the urls back to HTTP until I found a combination that worked.  If you only change the &lt;client-link&gt; and the &lt;portal-prefix&gt; properties, that seems to do the trick ... he author environment seems to run without SSL Handshake errors and the portal site defaults to SSL, even for coaches.

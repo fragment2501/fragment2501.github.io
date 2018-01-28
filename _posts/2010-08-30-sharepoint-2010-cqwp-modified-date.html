@@ -1,0 +1,13 @@
+---
+layout: post
+title: SharePoint 2010 CQWP Modified Date
+date: '2010-08-30T15:41:00.000-07:00'
+author: Bryan
+tags:
+- SharePoint 2010
+modified_time: '2010-08-30T15:42:57.138-07:00'
+blogger_id: tag:blogger.com,1999:blog-19111454.post-6448768156396303774
+blogger_orig_url: http://www.bryansgeekspeak.com/2010/08/sharepoint-2010-cqwp-modified-date.html
+---
+
+Pulling out your hair trying to find the field name for the "Last Modified Date" SharePoint 2010 field for use in ItemStyle.xsl?  Here it is, with an example of how to format the date using xslt functions available to ItemStyle.xsl:<br /><br /><div class="code">Modified On: &lt;xsl:value-of select="ddwrt:FormatDate(string(@_x007B_28cf69c5_x002D_fa48_x002D_462a_x002D_b5cd_x002D_27b6f9d2bd5f_x007D_) ,1033 ,5)" /&gt;&lt;br /&gt;&lt;br /&gt;<br /></div><br />I found the field name by dumping the names of all properties available to my xsl template using the Debug code below in ItemStyle.xsl. Once you've updated ItemStyle.xsl, create a test page in your SharePoint portal, drop in the CQWP and pick the following Debug template from the list.<br /><br /><div class="code">&lt;xsl:template name=&quot;Debug&quot; match=&quot;Row[@Style='Debug']&quot; mode=&quot;itemstyle&quot;&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsl:for-each select=&quot;@*&quot;&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P:&lt;xsl:value-of select=&quot;name()&quot; /&gt;&lt;br/&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xsl:for-each&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />&lt;/xsl:template&gt;<br /><br /></div>

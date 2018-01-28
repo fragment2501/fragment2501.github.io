@@ -1,0 +1,13 @@
+---
+layout: post
+title: Enabling OpenSSH Public Key Authentication
+date: '2009-01-07T09:48:00.000-08:00'
+author: Bryan
+tags:
+- OpenSSH
+modified_time: '2009-01-07T09:54:37.424-08:00'
+blogger_id: tag:blogger.com,1999:blog-19111454.post-7103072386587738682
+blogger_orig_url: http://www.bryansgeekspeak.com/2009/01/enabling-openssh-public-key.html
+---
+
+I found a really good article on using SSH public key authentication: <a href="http://www.ibm.com/developerworks/library/l-keyc.html">OpenSSH key management, Part 1</a>.  It covers all the basics on generating user private keys with a passphrase, where to place public keys on the server for authentication, etc.  Just be sure to check your sshd_config file on the target server to make sure youre putting your public keys in the right place.

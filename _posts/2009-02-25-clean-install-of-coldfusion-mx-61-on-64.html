@@ -1,0 +1,14 @@
+---
+layout: post
+title: Clean Install of ColdFusion MX 6.1 on 64 bit windows (IIS 6.0) succeeds but
+  displays internal server error 500 on page requests
+date: '2009-02-25T18:50:00.001-08:00'
+author: Bryan
+tags:
+- ColdFusion
+modified_time: '2009-02-25T19:05:42.431-08:00'
+blogger_id: tag:blogger.com,1999:blog-19111454.post-1225151200085948360
+blogger_orig_url: http://www.bryansgeekspeak.com/2009/02/clean-install-of-coldfusion-mx-61-on-64.html
+---
+
+I just spent an afternoon trying to install Coldfusion MX 6.1 on Windows Server 2003 Enterprise R2 64bit.  I got the installer to run fine by adding coldfusion-macr-win.exe as an exception to the Data Execution Prevention (DEP) feature (under system properties->advanced->performance->settings->Data Execution Prevention) and the install went smoothly.  After the installer finished, I checked to verify that the coldfusion IIS service extension was allowed to run in IIS (start->programs->administrative tools->IIS Manager->Web Service Extensions) and that all seemed to be enabled by default.  But when the configuration wizard was launched in the browser, I got a big 500 internal server error from IIS.  I double checked all the IIS settings and everything was setup fine, but I couldnt even hit a static .html file in IIS anymore.<br /><br />I ended up uninstalling coldfusion and then I even removed IIS and re-added it. From there, I tested that I could hit static .html pages in the default site, and I could just fine.  Performed the coldfusion install again and boom, IIS would no longer serve up any pages, not even the static HTML.  So then I did some digging and found a post by Ben - <a href="http://www.forta.com/blog/index.cfm/2006/2/6/Connecting-ColdFusion-MX-7-To-64bit-IIS-6">Connecting ColdFusion MX 7 to 64bit IIS 6</a> which ended up solving my problem.  <br /><br />It turns out that IIS 6 on 64 bit windows runs only 64bit processes by default.  The coldfusion extension is a 32 bit service, so it hosed up the whole IIS 6 service when it was enabled.  I was able to enable 32bit extensions as described in the technet article <a href="http://www.microsoft.com/technet/prodtechnol/WindowsServer2003/Library/IIS/405f5bb5-87a3-43d2-8138-54b75db73aa1.mspx?mfr=true">Configuring IIS to Run 32-bit Applications on 64-bit Windows (IIS 6.0)</a>, and after an iisreset coldfusion was working again and I was able to complete the install.<br /><br />I dont know how stable coldfusion will be in this kind of a setup, but at least you can get coldfusion running if you need it.

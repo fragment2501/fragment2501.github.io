@@ -1,0 +1,15 @@
+---
+layout: post
+title: SharePoint 2007 - Troubleshooting error "Unable to add selected web part(s)"
+date: '2010-03-17T09:46:00.000-07:00'
+author: Bryan
+tags:
+- MOSS
+- SharePoint
+modified_time: '2010-03-17T09:46:03.295-07:00'
+thumbnail: http://4.bp.blogspot.com/_It8-g3_9vec/S6EF9fIbP5I/AAAAAAAAAzE/7VTeLycHKh4/s72-c/WebPartError.jpg
+blogger_id: tag:blogger.com,1999:blog-19111454.post-3296898150292056321
+blogger_orig_url: http://www.bryansgeekspeak.com/2010/03/sharepoint-2007-troubleshooting-error.html
+---
+
+Recently one of my users ran into an issue where even with "Full Access" permissions to a SharePoint site they were seeing the error message below when trying to add a content editor web part to a SharePoint page they had created from the web interface.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/_It8-g3_9vec/S6EF9fIbP5I/AAAAAAAAAzE/7VTeLycHKh4/s1600-h/WebPartError.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/_It8-g3_9vec/S6EF9fIbP5I/AAAAAAAAAzE/7VTeLycHKh4/s320/WebPartError.jpg" /></a></div><br />At first, I was thinking it was a permissions issue. Then my buddy Shawn pointed me to the url. I had had not been able to reproduce the issue via the HTTP url, but the user was having the problem while accessing the site via HTTPS.  I gave it a try using an admin account via HTTPS and ended up seeing the same problem.<br /><br />Adding an alternate access mapping for the HTTPS url fixed the issue. I went with an "internet" zone access mapping for the HTTPS url, but I dont think it matters what zone you use in this case.  So when you decide to allow HTTPS, dont forget to add an alternate mapping for it in the SharePoint central admin!

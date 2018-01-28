@@ -1,0 +1,11 @@
+---
+layout: post
+title: Simple CFM form submitting to a database
+date: '2007-01-15T13:40:00.000-08:00'
+author: Bryan
+tags: 
+modified_time: '2007-01-15T14:02:42.341-08:00'
+blogger_id: tag:blogger.com,1999:blog-19111454.post-235982025471044887
+---
+
+what you need:<br /><ul><li>Coldfusion Development Server (you can download a single user developer version here: <a href="http://www.adobe.com/products/coldfusion/trial/">http://www.adobe.com/products/coldfusion/trial/</a>.  The current version as of this writing is 7.0.2)</li><li>Microsoft Access 2000 or later<br /></li><li>A plain text editor (notepad will do)</li></ul><ol><li>install coldfusion on your box.  we will use all the default install locations for this example.</li><li>create the following folders in the webroot:</li><ol><li>database</li><li>web</li></ol><li>create the master database to use in these examples:</li><ol><li>in the database directory create a new access database called "master.mdb"</li><li>create a new table in design view</li><li>add the following columns to the table:</li><ol><li>user_id (AutoNumber datatype, set as primary key)</li><li>user_name (text datatype, field size of 20)</li><li>user_password (text datatype, field size of 20)</li><li>user_full_name (text_datatype, field size of 255)</li></ol><li>save the new table with a name of "users" and close the design view.</li></ol><li>add the newly created database as a coldfusion datasource.  This will allow coldfusion to access the database we just created.</li><ol><li>login to the coldfusion admin page on your local machine using the admin username and password you set durring the coldfusion install (http://127.0.0.1/cfide/administrator)</li><li><br /></li></ol></ol>

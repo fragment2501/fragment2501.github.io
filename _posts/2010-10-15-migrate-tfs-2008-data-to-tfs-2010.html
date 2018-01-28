@@ -1,0 +1,13 @@
+---
+layout: post
+title: Migrate TFS 2008 data to TFS 2010 Project Collection
+date: '2010-10-15T16:56:00.000-07:00'
+author: Bryan
+tags:
+- TFS 2010
+modified_time: '2010-10-15T17:34:49.647-07:00'
+blogger_id: tag:blogger.com,1999:blog-19111454.post-4935321927202546275
+blogger_orig_url: http://www.bryansgeekspeak.com/2010/10/migrate-tfs-2008-data-to-tfs-2010.html
+---
+
+Its fairly easy to do once you know the tricks.  These instructions assume you have a running TFS 2008 instance with data to be migrated and a new TFS 2010 instance running with data.  You want to merge the TFS 2008 data into TFS2010 as a new collection. Here goes!<br /><br />1) Stop the TFS 2008 IIS application pool and web site on the old TFS server instance. This makes sure no one is actively changing data while we do the migration.<br /><br />2) do a SQL server backup of all tfs* databases from the old TFS 2008 instance.  In most cases this will be SQL server 2005 - the TFS 2010 upgrade commands will not work running against databases in SQL server 2005.<br /><br />TfsActivityLogging<br />TfsBuild<br />TfsIntegration<br />TfsVersionControl<br />TfsWarehouse<br />TfsWorkItemTracking<br />TfsWorkItemTrackingAttachments<br /><br />3) restore these databases to the SQL server 2008 instance used by the TFS 2010 instance.<br /><br />4) From the TFS 2010 server, run a command similar to the following ( you can run TfsConfig.exe import /help for more details)<br /><br /><div class="code">C:\Program Files\Microsoft Team Foundation Server 2010\Tools> .\TfsConfig.exe import /sqlinstance:MySQLServer2008Instance /collectionName:tfs2008_import /confirmed<br /></div><br />Where "MySQLServer2008Instance" is the SQL server 2008 instance used by your TFS 2010 instance, and "tfs2008_import" is the name of the collection to create in TFS2010 for your imported data.<br /><br />Once the import/upgrade is complete, all the old databases listed in step 2 are removed for you, leaving a database named tfs_tfs2008_import which TFS 2010 will use from now on to manage your collection in SQL server.

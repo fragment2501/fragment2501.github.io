@@ -1,0 +1,16 @@
+---
+layout: post
+title: SharePoint 2007 - The file xyz is checked out or locked for editing by someone
+  else
+date: '2010-01-07T09:51:00.000-08:00'
+author: Bryan
+tags:
+- MOSS
+- SharePoint
+modified_time: '2010-01-07T09:51:48.525-08:00'
+thumbnail: http://2.bp.blogspot.com/_It8-g3_9vec/S0Ye6ye-09I/AAAAAAAAAwI/sHbuZk2Mi-o/s72-c/webclient_service_stopped.JPG
+blogger_id: tag:blogger.com,1999:blog-19111454.post-4440079745923790079
+blogger_orig_url: http://www.bryansgeekspeak.com/2010/01/sharepoint-2007-file-xyz-is-checked-out.html
+---
+
+I ran into this annoying error today, when trying to check in a word 2007 document into a SharePoint document library with versioning enabled:<br /><br />"The file xyz is checked out or locked for editing by someone else"<br /><br />I was logged into the sharepoint site as the correct user, and I had opened the file in word 2007 and authenticated again as the same user, and I still get that message.<br /><br />To fix the problem, I had to disable the web client service on my local machine as shown in the screenshot below.  Once I did that, closed word 2007, then made my changes again and tried to do a checkin, everything worked as it should.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/_It8-g3_9vec/S0Ye6ye-09I/AAAAAAAAAwI/sHbuZk2Mi-o/s1600-h/webclient_service_stopped.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/_It8-g3_9vec/S0Ye6ye-09I/AAAAAAAAAwI/sHbuZk2Mi-o/s320/webclient_service_stopped.JPG" /></a><br /></div><br />Another thing to note is that this site was in my trusted zone, not my local intranet zone, and the sharepoint server is on a different domain than the one my workstation is logged into.  I'm not sure if those are factors at this point.

@@ -1,0 +1,13 @@
+---
+layout: post
+title: Another Painful Day At Work - Database Column Widths
+date: '2011-11-09T14:01:00.000-08:00'
+author: Bryan Rudden
+tags:
+- Databases
+modified_time: '2014-03-11T14:35:35.417-07:00'
+blogger_id: tag:blogger.com,1999:blog-19111454.post-5491169567258274554
+blogger_orig_url: https://www.blogger.com/comment.g?blogID=19111454&postID=5491169567258274554
+---
+
+<p>Another painful day at work trying to justify to my project managers why we should be using generic long varchar2 width/size specifications in my DB schema, for columns storing things like user entered addresses and phone numbers.  Things that our web application will constrain and validate (like phone number format) - things that our database does not need to care about. For these "generic" columns, we just want to accept whatever data the web app passes to us and persist it. Nothing more.</p> <p>There is an IBM article that explains my point much more clearly than I can manage in a meeting with my co-workers: <a href="http://www.ibm.com/developerworks/web/library/wa-dbdsgn1/index.html">http://www.ibm.com/developerworks/web/library/wa-dbdsgn1/index.html</a></p><div class="sidenote">Strings and numbers  In general, numerical types pose few problems -- just select one that is large enough to support the necessary range of values.  The attempt to find the optimal width of a string column is usually not worth the effort. You can avoid a lot of confusion later on by making all text messages of type varchar(n) and limiting yourself to a few standard string lengths and introducing aliases for them, such as: 32 bytes ("Label"), 256 bytes ("Note"), and 4k ("Text").  <b>Even if other business requirements restrict the maximum length of certain fields to specific values, the DB schema is arguably not the best place to enforce these rules. By the time the data reaches the DB, it is too late to do anything about it (except reject it). Individual restrictions, stemming from business rules and requirements, should be enforced by the business logic layer, which handles user interaction and input validation. On the other hand, maintenance of the DB schema is considerably simplified if it is restricted to a handful of different string attributes.</b> Limit the use of fixed-width strings to codes of all sorts (as opposed to variable-length strings for real text). Keep in mind however, that many seemingly fixed-length codes do actually become wider over time. The prudent DB designer tries to avoid anything similar to the Y2K problem for new development work. </div>

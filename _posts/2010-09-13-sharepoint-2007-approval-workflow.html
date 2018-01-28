@@ -1,0 +1,13 @@
+---
+layout: post
+title: SharePoint 2007 Approval Workflow missing from SharePoint 2010?
+date: '2010-09-13T08:09:00.000-07:00'
+author: Bryan
+tags:
+- SharePoint 2010
+modified_time: '2011-06-23T16:16:00.572-07:00'
+blogger_id: tag:blogger.com,1999:blog-19111454.post-388964399951520930
+blogger_orig_url: http://www.bryansgeekspeak.com/2010/09/sharepoint-2007-approval-workflow.html
+---
+
+<div class="sidenote">6/23/2011 update: Thanks to Pham Van Trung for pointing out a MS KB article that addresses this issue - <a href="http://support.microsoft.com/kb/2535850">http://support.microsoft.com/kb/2535850</a><br /></div><br />In one of our projects, we were using the MOSS publishing feature on a SharePoint 2007 farm, with the standard "Approval" publishing workflow on all our page libraries.  We recently did an upgrade on that farm to SharePoint 2010, and everything seemed to work the same - the existing sites still had the old approval workflow assigned to the Pages library, and they worked as expected. <br /><br />When we tried to make a copy of one of our sites, using the Content and Structure view to copy the entire site structure, the workflow assigned to the pages library doesnt copy over properly, which is normal. But now when we try to assign the approval workflow to the pages library after the fact, we simply cant. The old Approval workflow isnt available as a workflow option to pick from, and I've found no way to bring it back so that its selectable in the SharePoint 2010 web interface. There are some blogs out there that mention activating a feature called "SharePoint 2007 workflows", which I tried, but that still did not fix the problem for me.<br /><br />To work around the problem, one of our C# gurus built a console app that can make the old SharePoint 2007 workflow available in a SharePoint site.

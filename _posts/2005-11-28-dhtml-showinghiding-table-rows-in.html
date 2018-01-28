@@ -1,0 +1,12 @@
+---
+layout: post
+title: 'DHTML: Showing/Hiding table rows in firefox'
+date: '2005-11-28T13:57:00.000-08:00'
+author: Bryan
+tags: 
+modified_time: '2005-11-28T14:04:17.306-08:00'
+blogger_id: tag:blogger.com,1999:blog-19111454.post-113321545730147042
+blogger_orig_url: http://www.bryansgeekspeak.com/2005/11/dhtml-showinghiding-table-rows-in.html
+---
+
+I've found an issue with firefox 1.5 where I'm trying to use the display CSS property to show/hide table rows.   This works fine with div's, but with tables I run into problems.  Using "display: block"  to show a row breaks the table layout (the row floats to the right of my layout).   Looked up the display property on the w3c website and found that you should be able to use the "run-in" value to show cells/rows in tables.  Tried it and no-go...I get this message in the firefox JS debugger:<br /><br />Error: Error in parsing value for property 'display'.  Declaration dropped.<br /><br />meh.  Serves me right for using tables I guess :-)  Tried a few of the other possible values for the display property and couldn't get anything to work correctly.  I'll switch to using divs, that always works like a champ.

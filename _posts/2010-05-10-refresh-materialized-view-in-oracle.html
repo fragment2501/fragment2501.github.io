@@ -1,0 +1,13 @@
+---
+layout: post
+title: Refresh a Materialized View in Oracle
+date: '2010-05-10T12:55:00.001-07:00'
+author: Bryan
+tags:
+- Oracle
+modified_time: '2010-05-10T12:57:46.642-07:00'
+blogger_id: tag:blogger.com,1999:blog-19111454.post-1391008797745698901
+blogger_orig_url: http://www.bryansgeekspeak.com/2010/05/refresh-materialized-view-in-oracle.html
+---
+
+To refresh an oracle materialized view, run the following command:<br /><div class="code">execute DBMS_SNAPSHOT.REFRESH( 'MV','C');<br /></div>where "MV" is the view name<br /><br />(this is a re-post - trying to get it to show up in google search >_<;)

@@ -1,0 +1,13 @@
+---
+layout: post
+title: SharePoint MOSS 2007 - Customizing The Content Query Web Part (CQWP)
+date: '2008-04-29T08:39:00.000-07:00'
+author: Bryan
+tags:
+- MOSS
+modified_time: '2008-09-18T13:47:14.094-07:00'
+blogger_id: tag:blogger.com,1999:blog-19111454.post-6749763511904792184
+blogger_orig_url: http://www.bryansgeekspeak.com/2008/04/sharepoint-moss-2007-customizing.html
+---
+
+<span style="font-weight:bold;">Introduction</span><br /><br />If you've used MOSS 2007 to build a basic site or two, you've probably started adding custom columns and content types to document libraries within your site.  Using the Content Query Web Part, you can fetch lists of results across your site filtering by your custom content types and custom columns.  But then, the displayed results are limited to the presentation styles that come with the CQWP out of the box, which do not include custom columns in the display.<br /><br />MOSS does support customizations to the CQWP though XML and XSL markup. I used the following steps to successfully modify the CQWP and even added it as an option in the Web Part Gallery without the need to do any compiling or modification to the 12 hive directory.<br /><br />1) Add the CQWP to a page and export the CQWP as a .webpart xml file<br />2) Modify the exported .webpart configuration to enable support for your custom columns<br />3) Import customized .webpart file to create a new CQWP instance on a page<br />4) Add custom style to /Style Library/XSL Style Sheets/ItemStyles.xsl in SharePoint Designer to render the custom columns<br />5) Test and repeat as needed to get the output you need<br /><br /><span style="font-weight:bold;">References</span><br /><br /><a href="http://msdn2.microsoft.com/en-us/library/aa981241.aspx">How to: Customize the Content Query Web Part by using Custom Properties</a><br /><br /><a href="http://www.microsoft.com/belux/msdn/nl/community/columns/stevenvandecraen/contentquerywebpart.mspx">Customizing the Content Query Web Part XSL</a> (Examples of XSL date format functions here)<br /><br /><a href="http://msdn2.microsoft.com/en-us/library/aa505323.aspx">SharePoint Data View Web Part Extension Functions in the ddwrt Namespace</a><br /><br /><a href="http://bryansgeekspeak.blogspot.com/2008/06/sharepoint-moss-2007-caml-madness.html">CAML Madness!</a> (my list of CAML quirks you should be aware of)

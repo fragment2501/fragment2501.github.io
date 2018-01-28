@@ -1,0 +1,14 @@
+---
+layout: post
+title: Backing up a website to CD
+date: '2009-01-22T16:45:00.001-08:00'
+author: Bryan
+tags:
+- unix
+- scripts
+modified_time: '2009-01-23T10:28:16.620-08:00'
+blogger_id: tag:blogger.com,1999:blog-19111454.post-8027637436995254178
+blogger_orig_url: http://www.bryansgeekspeak.com/2009/01/backing-up-website-to-cd.html
+---
+
+If you want to archive off a dymaic site (for example, youve finished migrating from an old CMS to a new one and are ready to shutdown the old site) you can create a physical backup of all the generated static content using a tool like wget.  wget can scan the entire website recursively, saving a copy of each html file and it's resources (images, css, javascript) to a local directory that you can then archive off to cd, dvd, etc.  wget comes with just about every unix distro available, and you can get your hands on it for windows by installing <a href="http://www.cygwin.com/">cygwin</a> (be sure to install the wget package in the "web" category).  Once you've got wget installed and working, you can mirror a site using the following:<br /><br /><div class="code"><br />wget -erobots=off --wait 1 --html-extension --page-requisites --mirror --convert-links http://www.gnu.org<br /></div><br /><br />The trick forcing wget to ignore the robots.txt rules file at the root of most sites.  By default, wget respects those rules which usually tells wget to skip a good portion of a pages resources needed for a complete site backup, like images used in page HTML design.<br /><br />More info about wget can be found at <a href="http://wget.addictivecode.org/FrequentlyAskedQuestions">http://wget.addictivecode.org/FrequentlyAskedQuestions</a>

@@ -1,0 +1,15 @@
+---
+layout: post
+title: 401.1 error when browsing a Web site that uses Integrated Authentication on
+  IIS 6
+date: '2009-06-17T15:15:00.000-07:00'
+author: Bryan
+tags:
+- MOSS
+- SharePoint
+modified_time: '2009-06-17T15:25:08.434-07:00'
+blogger_id: tag:blogger.com,1999:blog-19111454.post-5669207250683784826
+blogger_orig_url: http://www.bryansgeekspeak.com/2009/06/4011-error-when-browsing-web-site-that.html
+---
+
+I've run into this error when setting up new sharepoint sites from the server running the central admin site ...  When you setup a new website from the central admin using host headers and then try to bring it up in a browser after creating the site collection, you get a 401.1 error and are unable to authenticate.  It's a known issue, here is the MS kb article about it:<br /><br /><a href="http://support.microsoft.com/kb/896861/">http://support.microsoft.com/kb/896861/</a><br /><br />I probably would have spent a few days trying to figure this out if not for my buddy Nitin who gave me the heads up about this before we ever installed the patch at work (Thanks much Nitin!). We ended up useing the "Disable loopback check" method to resolve the issue:<br /><br /><div class="code"><br />1. Click Start, click Run, type regedit, and then click OK. <br />2. In Registry Editor, locate and then click the following registry key: <br />HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa<br />3. Right-click Lsa, point to New, and then click DWORD Value. <br />4. Type DisableLoopbackCheck, and then press ENTER. <br />5. Right-click DisableLoopbackCheck, and then click Modify. <br />6. In the Value data box, type 1, and then click OK. <br />7. Quit Registry Editor, and then restart your computer.<br /></div>

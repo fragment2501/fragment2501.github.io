@@ -1,0 +1,16 @@
+---
+layout: post
+title: Debugging Windows Server 2008R2 Event ID 6037 - "The target name used is not
+  valid"
+date: '2010-12-20T12:12:00.000-08:00'
+author: Bryan
+tags:
+- SharePoint 2010
+- Kerberos
+- Windows 2008R2
+modified_time: '2010-12-20T12:27:36.746-08:00'
+blogger_id: tag:blogger.com,1999:blog-19111454.post-1426047348132040721
+blogger_orig_url: http://www.bryansgeekspeak.com/2010/12/debugging-windows-server-2008r2-event.html
+---
+
+I found this error in the event logs on my WFE after trying to configure kerberos for a SharePoint 2010 farm (in a small farm configuration, with specified service accounts for application pools)<br /><br /><div class="code">Source: LsaSrv<br />Event ID: 6037<br />The program w3wp.exe, with the assigned process ID 1234, could not authenticate locally by using the target name HTTP/devsharepoint.mydomain.com. The target name used is not valid. A target name should refer to one of the local computer names, for example, the DNS host name.<br /><br />Try a different target name.<br /></div><br />The curious thing is that the target name is a Kerberos SPN >_><br /><br />the URL listed in the error is registered in DNS correctly, and I can ping it from the WFE.  I found a blog post that has a potential fix via a registry hack (<a href="http://www.dotnetpulse.com/?p=70">http://www.dotnetpulse.com/?p=70</a>). I'm listing it again here for reference - I implemented the fix and so far (for at least an hour) no more of these errors are showing in the event log *keeps fingers crossed!*<br /><br /><ol><li>Go to REGEDIT > HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\MSV1_0</li><li>Right click MSV1_0 > New > Multi-String Value</li><li>Type 'BackConnectionHostNames'</li><li>Right click & select ‘Modify’</li><li>Enter the Hostname of the site: WEBSITENAME (and on a new line enter the FQDN, WEBSITENAME.domain.com as well)</li><li>Restart IIS</li></ol>

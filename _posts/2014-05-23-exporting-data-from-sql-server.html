@@ -1,0 +1,13 @@
+---
+layout: post
+title: Exporting Data from SQL Server Managment Studio as INSERT statements
+date: '2014-05-23T15:07:00.004-07:00'
+author: Bryan Rudden
+tags: 
+modified_time: '2014-05-23T15:07:58.555-07:00'
+thumbnail: http://3.bp.blogspot.com/-CY5hRlOyjz0/U3_GFdZwskI/AAAAAAAAAI0/xTkdj6i4BH0/s72-c/ExportDataAsSQLInsertStatements.PNG
+blogger_id: tag:blogger.com,1999:blog-19111454.post-9016577442720218605
+blogger_orig_url: http://www.bryansgeekspeak.com/2014/05/exporting-data-from-sql-server.html
+---
+
+Another quirk of Microsoft SQL Server Management Studio 2008 - they made the option to export table data as SQL insert statements almost impossible to find.  Here's how you do it:  <br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-CY5hRlOyjz0/U3_GFdZwskI/AAAAAAAAAI0/xTkdj6i4BH0/s1600/ExportDataAsSQLInsertStatements.PNG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-CY5hRlOyjz0/U3_GFdZwskI/AAAAAAAAAI0/xTkdj6i4BH0/s320/ExportDataAsSQLInsertStatements.PNG" /></a></div><ul>  <li>Right click on the database and go to Tasks -&gt; Generate Scripts</li>  <li>Select the tables that you want to generate the script for</li>  <li>Go to Set scripting options and click the Advanced button</li>  <li>In the General category, go to type of data to script</li>  <li>There are 3 options: Schema Only, Data Only, and Schema and Data. Select the appropriate option and click on OK</li></ul> Found that gem <a href="http://stackoverflow.com/questions/982568/what-is-the-best-way-to-auto-generate-insert-statements-for-a-sql-server-table">here</a>.

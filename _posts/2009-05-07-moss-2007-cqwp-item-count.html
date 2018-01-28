@@ -1,0 +1,15 @@
+---
+layout: post
+title: 'MOSS 2007 - CQWP: Item Count'
+date: '2009-05-07T15:09:00.000-07:00'
+author: Bryan
+tags:
+- MOSS
+- SharePoint
+modified_time: '2009-05-07T15:21:34.584-07:00'
+thumbnail: http://3.bp.blogspot.com/_It8-g3_9vec/SgNdS2reXKI/AAAAAAAAArY/8Qd_ZtehQNU/s72-c/contentquerymain3.JPG
+blogger_id: tag:blogger.com,1999:blog-19111454.post-1606721156759323578
+blogger_orig_url: http://www.bryansgeekspeak.com/2009/05/moss-2007-cqwp-item-count.html
+---
+
+Similar to the group header count (<a href="http://bryansgeekspeak.blogspot.com/2009/05/moss-2007-cqwp-row-count-and-group.html">http://bryansgeekspeak.blogspot.com/2009/05/moss-2007-cqwp-row-count-and-group.html</a>), we can get at the current item row count a bit easier.  The row count is already tracked in "/Style Library/XSL Style Sheets/ContentQueryMain.xsl" via the CurPosition variable.  That variable is even passed to the ItemStyle.xsl template for us. We only need to setup a param to catch that variable (passed into the ItemStyle.xsl template as the variable name "CurPos") and then use it in our output.<br /><br />Here is a snip from ContentQueryMain.xsl showing where we pass in the variable:<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://3.bp.blogspot.com/_It8-g3_9vec/SgNdS2reXKI/AAAAAAAAArY/8Qd_ZtehQNU/s1600-h/contentquerymain3.JPG"><img style="cursor:pointer; cursor:hand;width: 320px; height: 182px;" src="http://3.bp.blogspot.com/_It8-g3_9vec/SgNdS2reXKI/AAAAAAAAArY/8Qd_ZtehQNU/s320/contentquerymain3.JPG" border="0" alt=""id="BLOGGER_PHOTO_ID_5333208962233687202" /></a><br /><br />From ItemStyle.xsl, here is an example of a "SkipRow1" template that does not display the first item, but displays all those after the first returned by the CQWP:<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://4.bp.blogspot.com/_It8-g3_9vec/SgNeHSLd_fI/AAAAAAAAArg/Ma2zeyt0Lv0/s1600-h/ItemStyle1.JPG"><img style="cursor:pointer; cursor:hand;width: 320px; height: 170px;" src="http://4.bp.blogspot.com/_It8-g3_9vec/SgNeHSLd_fI/AAAAAAAAArg/Ma2zeyt0Lv0/s320/ItemStyle1.JPG" border="0" alt=""id="BLOGGER_PHOTO_ID_5333209862968835570" /></a><br /><br />All you really need in your template is the param part:<br /><div class="code"><br />&lt;xsl:param name="CurPos" /&gt;<br /></div><br />and then whatever test/output you need to make the page work.  Here is an example if statement against the CurPos variable:<br /><br /><div class="code"><br />&lt;xsl:if test="$CurPos &amp;gt; 1"&gt;<br />....<br />&lt;/xsl:if&gt;<br /></div>

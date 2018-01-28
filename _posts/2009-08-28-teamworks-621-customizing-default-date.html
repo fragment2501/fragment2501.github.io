@@ -1,0 +1,16 @@
+---
+layout: post
+title: Teamworks 6.2.1 - Customizing Default Date Format
+date: '2009-08-28T14:13:00.001-07:00'
+author: Bryan
+tags:
+- Teamworks
+- Tutorial Video
+- Lombardi
+modified_time: '2009-11-19T16:04:55.487-08:00'
+thumbnail: http://3.bp.blogspot.com/_It8-g3_9vec/SwXca71kyRI/AAAAAAAAAvI/Bxx0nCXkU1M/s72-c/SetDateFormatWhenBoundToStringType.JPG
+blogger_id: tag:blogger.com,1999:blog-19111454.post-6577355050442260565
+blogger_orig_url: http://www.bryansgeekspeak.com/2009/08/teamworks-621-customizing-default-date.html
+---
+
+In this video I show how to create custom variable types in Teamworks for storing date objects in formats other than what is provided ootb. The examples shown in the video include a custom date format "MM/dd/yyyy", a custom date/time format "MM/dd/yyyy h:mm a" and a timestamp format including milliseconds "MM/dd/yyyy h:mm:ss.SSS a" <br /><br /><object height="385" width="640"><param name="movie" value="http://www.youtube.com/v/7EmmJFzMGdg&hl=en&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/7EmmJFzMGdg&hl=en&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="385"></embed></object><br /><br />Make sure to enable all features of the Authoring environment before trying this yourself, or you wont be able to see the options you need to configure when editing variable types.<br /><br /><br /><b>19NOV2009 UPDATE</b><br />With the release of Teamworks 6.2.2, the date picker coach control works differently.  Now when you select a date, it will always set the date field using the date format found in the "presentation" tab of the date controls property pane. By default, the format is always set to "MM-dd-yyyy". If you used the above method to create your own date type, the date validation javascript will expect to see the date in the format "MM/dd/yyyy" and will now fail whenever someone uses this coach control to change a date.<br /><br />You'll now need to perform the extra step of setting this property to the custom date format of "MM/dd/yyyy" as shown in the following screenshot.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/_It8-g3_9vec/SwXca71kyRI/AAAAAAAAAvI/Bxx0nCXkU1M/s1600/SetDateFormatWhenBoundToStringType.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/_It8-g3_9vec/SwXca71kyRI/AAAAAAAAAvI/Bxx0nCXkU1M/s320/SetDateFormatWhenBoundToStringType.JPG" /></a><br /></div>

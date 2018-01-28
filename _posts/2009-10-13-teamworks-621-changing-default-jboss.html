@@ -1,0 +1,16 @@
+---
+layout: post
+title: Teamworks 6.2.1 - Changing the default jboss home page
+date: '2009-10-13T10:09:00.000-07:00'
+author: Bryan
+tags:
+- JBoss
+- Teamworks
+- Lombardi
+modified_time: '2009-10-13T10:18:37.582-07:00'
+thumbnail: http://4.bp.blogspot.com/_It8-g3_9vec/StSveedEoYI/AAAAAAAAAvA/wMzltUixFPg/s72-c/jbossdefaultpage.JPG
+blogger_id: tag:blogger.com,1999:blog-19111454.post-5415594604989135739
+blogger_orig_url: http://www.bryansgeekspeak.com/2009/10/teamworks-621-changing-default-jboss.html
+---
+
+When you do an install of teamworks, you get the following process-server URLs by default:<br /><br />http://localhost:8081/portal &lt;- the process server portal<br />http://localhost:8081/teamworks &lt;- the process server console<br />http://localhost:8081/ &lt;- the default jboss web application<br /><br />The default jboss web application has a simple html home page with links to JBoss documentation, the server status page (anonymous access allowed), the JMX console and the JBoss console (both password protected).<br /><br /><div class="separator" style="clear: both;"><a href="http://4.bp.blogspot.com/_It8-g3_9vec/StSveedEoYI/AAAAAAAAAvA/wMzltUixFPg/s1600-h/jbossdefaultpage.JPG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/_It8-g3_9vec/StSveedEoYI/AAAAAAAAAvA/wMzltUixFPg/s320/jbossdefaultpage.JPG" /></a><br /></div><br />When you go to production, at a minimum, you'll want to change this page and remove or password protect the tomcat status page.<br /><br />I havent found any Teamworks documentation that talks about any of this, but after poking around a bit I found the web.xml file for the default web application ...<br /><br /><div class="code"><your-teamworks-root-path>\process-server\deploy\jbossweb-tomcat55.sar\ROOT.war\WEB-INF\web.xml<br /></div>...which I edited to remove the status page.  Here is the resulting web.xml:<br /><br /><div class="code">&lt;web-app&gt;<br />&nbsp;&nbsp;&lt;display-name&gt;Welcome to JBoss&lt;/display-name&gt;<br />&nbsp;&nbsp;&lt;description&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp; Welcome to JBoss<br />&nbsp;&nbsp;&lt;/description&gt;<br />&nbsp;&nbsp;&lt;!--<br />&nbsp;&nbsp;&lt;servlet&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;servlet-name&gt;Status Servlet&lt;/servlet-name&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;servlet-class&gt;org.jboss.web.tomcat.tc5.StatusServlet&lt;/servlet-class&gt;<br />&nbsp;&nbsp;&lt;/servlet&gt;<br />&nbsp;&nbsp;&lt;servlet-mapping&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;servlet-name&gt;Status Servlet&lt;/servlet-name&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;url-pattern&gt;/status&lt;/url-pattern&gt;<br />&nbsp;&nbsp;&lt;/servlet-mapping&gt;<br />&nbsp;&nbsp;--&gt;<br />&lt;/web-app&gt;<br /></div><br />We still need to hack up the default HTML page shown in the above screenshot. To do that, edit the file located here:<br /><br /><div class="code"><your-teamworks-root-path>\process-server\deploy\jbossweb-tomcat55.sar\ROOT.war\index.html<br /></div>All basic HTML in that file, so its pretty straightforward to edit.

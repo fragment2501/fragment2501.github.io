@@ -1,0 +1,15 @@
+---
+layout: post
+title: Teamworks LDAP Authentication to AD on Windows Server 2008 R2 Quirk?
+date: '2010-12-06T16:51:00.000-08:00'
+author: Bryan
+tags:
+- SharePoint 2010
+- Teamworks
+- LDAP
+modified_time: '2010-12-20T14:01:47.402-08:00'
+blogger_id: tag:blogger.com,1999:blog-19111454.post-2269486941868485525
+blogger_orig_url: http://www.bryansgeekspeak.com/2010/12/teamworks-ldap-authentication-to-ad-on.html
+---
+
+I just ran into the following error when pointing an existing known good Teamworks 6.2.2 instance from a Windows Server 2003R2 PDC to a Windows Server 2008R2 PDC for domain authentication:<br /><div class="code">LDAP: error code 49 - 80090308<br /></div><br />did some googling and found out that sometimes windows AD requires you to use windows style bind credentials in the format "username@mydomain.com" rather than the traditional ldap DN of the user "CN=username,DC=mydomain,DC=com". Annoying -.-

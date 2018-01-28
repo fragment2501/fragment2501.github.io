@@ -1,0 +1,16 @@
+---
+layout: post
+title: Teamworks for SharePoint 2007 Installer
+date: '2009-06-18T13:34:00.000-07:00'
+author: Bryan
+tags:
+- Teamworks
+- MOSS
+- SharePoint
+modified_time: '2010-01-13T09:17:55.974-08:00'
+thumbnail: http://3.bp.blogspot.com/_It8-g3_9vec/Sjqovpf0KzI/AAAAAAAAAr4/6buCrCPTGrs/s72-c/cannot_open_database.JPG
+blogger_id: tag:blogger.com,1999:blog-19111454.post-3017545517025475525
+blogger_orig_url: http://www.bryansgeekspeak.com/2009/06/teamworks-for-sharepoint-2007-installer.html
+---
+
+I've been testing out Teamworks for SharePoint 2007 in my sandbox farm and wanted to make a quick note for future installs - when running the installer, it tries to connect to the content database of the SharePoint web site you chose using their install wizard. It does this to create Lombardi site templates, which are later required by the teamworks integration component. <br /><br />Make sure that you run the installer as the account that has rights to access the content database in sql server. In most cases, you'll want to run the installer using the service account you created to manage SQL connections for the sharepoint farm. In my case, I was trying to run the installer as the "Moss Setup User" which is the account I use to access the central admin and to run the "SharePoint Products and Technologies Configuration Wizard", but that account has more restricted database access which lead me to this problem.<br /><br /><a href="http://3.bp.blogspot.com/_It8-g3_9vec/Sjqovpf0KzI/AAAAAAAAAr4/6buCrCPTGrs/s1600-h/cannot_open_database.JPG"><img style="cursor:pointer; cursor:hand;width: 320px; height: 285px;" src="http://3.bp.blogspot.com/_It8-g3_9vec/Sjqovpf0KzI/AAAAAAAAAr4/6buCrCPTGrs/s320/cannot_open_database.JPG" border="0" alt=""id="BLOGGER_PHOTO_ID_5348773044002499378" /></a><br /><br />If you dont have the proper SQL server rights to the database, the installer silently fails to install the new site templates, and in turn the Teamworks SharePoint Integration features all fail. If you run into this problem, simply run the installer again and allow it to uninstall the Teamworks components from your SharePoint server, then login as the user with proper rights to access the content database you want to install to and run the installer again.

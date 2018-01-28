@@ -1,0 +1,13 @@
+---
+layout: post
+title: Teamworks 6.2.1 - 64bit support
+date: '2009-07-02T15:49:00.000-07:00'
+author: Bryan
+tags:
+- Teamworks
+modified_time: '2009-07-02T20:24:51.718-07:00'
+blogger_id: tag:blogger.com,1999:blog-19111454.post-2799858873944887411
+blogger_orig_url: http://www.bryansgeekspeak.com/2009/07/teamworks-62-64bit-support.html
+---
+
+If you plan to run Teamworks in 64bit mode, you'll need to update to the latest version of Teamworks (6.2.1 as of this post), download/install a 64bit version of the Java Standard Edition 1.5 runtime, and you'll also need to identify what 64bit architecture your server supports: x64 or ia64.<br /><br />On Windows Server 2003 you can identify your servers processor architecture by running the following command from the run menu: winmsd.exe<br /><br />In the default view, the "Processor" value should identify your arch.  If the processor name starts with IA, that's the ia64 version.  If it starts with EM or is any of the AMD 64 bit processors, you're using x64.
