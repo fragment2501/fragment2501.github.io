@@ -92,10 +92,10 @@ analytics:
 
 # Site Author
 author:
-  name             : "Bryan"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Stuff!"
-  location         : "Somewhere"
+  name             : #"Bryan"
+  avatar           : "/assets/images/bio-photo.gif" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "I build web apps with a bunch of different frameworks (.NET MVC, SharePoint, Drupal, ColdFusion) using bunch of different datastores (Oracle, SQL Server, MySQL, some CouchDB). I'm also a big fan of continuous integration testing and devops."
+  location         : #"Somewhere"
   email            :
   uri              :
   home             : # null (default), "absolute or relative url to link to author home"
@@ -105,7 +105,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           :
+  github           : fragment2501
   gitlab           :
   google_plus      :
   keybase          :
@@ -117,7 +117,7 @@ author:
   stackoverflow    : # "123456/username" (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)
   steam            : # "steamId" (the last part of your profile url, e.g. https://steamcommunity.com/id/steamId/)
   tumblr           :
-  twitter          :
+  twitter          : fragment2501
   vine             :
   weibo            :
   xing             :
