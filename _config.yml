@@ -42,5 +42,17 @@ remote_theme: mmistakes/minimal-mistakes
 #   - vendor/ruby/
 
 # Pagination
-paginate: 5
-paginate_path: posts/page:num/
+#paginate: 5
+#paginate_path: posts/page:num/
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      read_time: true
+      comments: true
+      share: true
+      related: true
