@@ -1,0 +1,227 @@
+---
+pages:
+- _posts/2016-08-19-sharepoint-custom-c-code-impersonate.html
+- _posts/2015-04-10-needed-break-from-all.html
+- _posts/2014-12-26-coldfusion-11-java-keytool-import-cert.html
+- _posts/2014-10-23-sql-server-recursive-cte-query-to-get.html
+- _posts/2014-10-17-copying-ad-users-into-sharepoint-2010.html
+- _posts/2014-05-23-exporting-data-from-sql-server.html
+- _posts/2014-03-13-automated-browser-testing-using-selenium.html
+- _posts/2012-08-02-tfs-2010-undo-someone-elses-checkout.html
+- _posts/2012-06-30-move-to-cloud-services.html
+- _posts/2011-12-08-sql-server-2008r2-linked-server-to.html
+- _posts/2011-12-01-sql-server-2008-dumping-varbinary-data.html
+- _posts/2011-11-14-understanding-rest-ful-web-services.html
+- _posts/2011-11-09-comment.html
+- _posts/2011-10-14-ios5-icloud-not-as-open-as-i-had-hoped.html
+- _posts/2011-10-13-something-neat-p2pu-beginning-game.html
+- _posts/2011-10-04-sharepoint-2010-removing-orphaned-web.html
+- _posts/2011-09-30-notes-on-migrating-oracle-11g-tables-to.html
+- _posts/2011-09-15-my-new-blogger-account.html
+- _posts/2011-06-30-quick-look-at-cloud-storage-security.html
+- _posts/2011-06-17-web-project-deployment-deploying-oracle.html
+- _posts/2011-06-08-exporting-oracle-table-data-using-sql.html
+- _posts/2011-06-08-exporting-table-data-using-sql.html
+- _posts/2011-06-08-web-application-deployment-deploying.html
+- _posts/2011-05-19-k2-blackpearl-45-server-event-code.html
+- _posts/2011-05-05-dear-microsoft-aspnet-team-thank-you.html
+- _posts/2011-04-20-iis-60-default-document-not-working.html
+- _posts/2011-04-15-mobile-web-application-frameworks.html
+- _posts/2011-04-01-comment.html
+- _posts/2011-03-15-deploy+-net+mvc3+web+app+with+bin+deployment.html
+- _posts/2011-03-04-vs2010-deployments-using-tfs2010-build.html
+- _posts/2011-02-23-a+look+at+vs2010+web+deployment+package.html
+- _posts/2011-02-21-sharepoint-2010-on-windows-server-2008.html
+- _posts/2011-02-14-workflow+engine+solutions+-+should+i+buy+a+cots+product+or+build+my+own+custom+solution-.html
+- _posts/2011-02-14-windows-2008r2-msdtc-errors.html
+- _posts/2011-01-25-troubleshooting-gssexception-channel.html
+- _posts/2011-01-21-verifying-ssl-certificate-request.html
+- _posts/2011-01-12-vs2010-vim.html
+- _posts/2011-01-06-playing-around-with-html5-video.html
+- _posts/2011-01-04-playing-around-with-html5-client-side.html
+- _posts/2011-01-03-windows-2008r2-iis-75-aspnet-40.html
+- _posts/2010-12-20-kinit-fails-to-generate-keytab.html
+- _posts/2010-12-20-debugging-windows-server-2008r2-event.html
+- _posts/2010-12-17-rediscovering-http-headers.html
+- _posts/2010-12-06-teamworks-ldap-authentication-to-ad-on.html
+- _posts/2010-12-06-kerberos.html
+- _posts/2010-11-04-net-sql-query-results-to-datatable-type.html
+- _posts/2010-10-15-migrate-tfs-2008-data-to-tfs-2010.html
+- _posts/2010-10-11-dropbox+-+docstogo+=+awesome.html
+- _posts/2010-09-13-sharepoint-2007-approval-workflow.html
+- _posts/2010-08-30-sharepoint-2010-cqwp-modified-date.html
+- _posts/2010-08-13-good-aspnet-mvc-tutorial.html
+- _posts/2010-07-27-custom-workflow-architecture-table-of.html
+- _posts/2010-07-27-custom-workflow-architecture-examining.html
+- _posts/2010-07-27-custom-workflow-architecture-workflow.html
+- _posts/2010-07-16-custom-workflow-architecturte-routing.html
+- _posts/2010-06-18-team-foundation-server-2010-install-and.html
+- _posts/2010-05-10-refresh-materialized-view-in-oracle.html
+- _posts/2010-03-17-sharepoint-2007-troubleshooting-error.html
+- _posts/2010-02-18-sharepoint-2007-import-fails-with.html
+- _posts/2010-02-05-html5-notes.html
+- _posts/2010-01-11-enabling-kerberos-in-windows-domain-for.html
+- _posts/2010-01-07-sharepoint-2007-file-xyz-is-checked-out.html
+- _posts/2009-12-30-sso-authentication-problems-for-windows.html
+- _posts/2009-12-18-teamworks-62-calling-oracle-storec.html
+- _posts/2009-11-24-create-oracle-user-and-grant.html
+- _posts/2009-11-12-displaying-clob-data-in-microsoft.html
+- _posts/2009-10-22-exploring-xml-database-solutions.html
+- _posts/2009-10-13-teamworks-621-changing-default-jboss.html
+- _posts/2009-09-23-teamworks-allow-managers-to-reassign.html
+- _posts/2009-08-28-teamworks-621-customizing-default-date.html
+- _posts/2009-08-04-bryans-oracle-db-design-style-standard.html
+- _posts/2009-08-04-teamworks-621-inserting-twdate-into.html
+- _posts/2009-07-20-teamworks-621-enable-ssl-via-self.html
+- _posts/2009-07-17-teamworks-make-single-select-list-db.html
+- _posts/2009-07-16-create-teamworks-sql-execute-service.html
+- _posts/2009-07-16-lombardi-teamworks-change-text-input.html
+- _posts/2009-07-16-comment.html
+- _posts/2009-07-07-teamworks-621-moss-2007-kerberos-sso.html
+- _posts/2009-07-02-teamworks-62-64bit-support.html
+- _posts/2009-06-25-teamworks-621-active-directory.html
+- _posts/2009-06-18-teamworks-for-sharepoint-2007-installer.html
+- _posts/2009-06-17-4011-error-when-browsing-web-site-that.html
+- _posts/2009-06-12-teamworks-62-upgrade-issues.html
+- _posts/2009-06-11-teamworks-61-chaning-database.html
+- _posts/2009-06-10-fixing-sid-of-copied-virtual-machine.html
+- _posts/2009-05-07-moss-2007-cqwp-item-count.html
+- _posts/2009-05-07-moss-2007-cqwp-row-count-and-group.html
+- _posts/2009-04-29-microsoft-office-sharepoint-server-2007.html
+- _posts/2009-04-27-microsoft+office+sharepoint+service+pack+2+now+available.html
+- _posts/2009-04-07-latest-sharepoint-2007-wss-30-and-moss.html
+- _posts/2009-03-06-moss-2007-show-sharepoint-version_06.html
+- _posts/2009-03-02-moss-2007-show-sharepoint-version.html
+- _posts/2009-02-25-clean-install-of-coldfusion-mx-61-on-64.html
+- _posts/2009-02-24-moss-2007-workflow-approval-sets.html
+- _posts/2009-02-03-oracle-sqldeveloper-fixing-that.html
+- _posts/2009-01-23-using-regexpreplace-in-oracle-10g.html
+- _posts/2009-01-22-backing-up-website-to-cd.html
+- _posts/2009-01-07-enabling-openssh-public-key.html
+- _posts/2008-12-18-lombardi-administrator-training.html
+- _posts/2008-12-18-lombardi-admin-training-notes-18dec2008.html
+- _posts/2008-12-17-lombardi-admin-training-notes-17dec2008.html
+- _posts/2008-12-16-lombardi-admin-training-notes-16dec2008.html
+- _posts/2008-12-09-sharepoint-moss-2007-troubleshooting.html
+- _posts/2008-12-05-sharepoint-moss-2007-renaming-farms-sql.html
+- _posts/2008-12-04-lombardi-training-december-1-4-training.html
+- _posts/2008-12-04-lombardi-traning-notes-04dec2008.html
+- _posts/2008-12-03-lombardi-notes-03dec2008.html
+- _posts/2008-12-02-lombardi-notes-01dec2008.html
+- _posts/2008-11-14-moss-publishing-site-contributors-get.html
+- _posts/2008-11-12-sharepoint-moss-2007-enabling-emails-in.html
+- _posts/2008-11-10-sharepoint-moss-2007-troubleshooting.html
+- _posts/2008-11-06-sharepoint-moss-2007-moving-farms-sql.html
+- _posts/2008-11-04-javascript-to-dynamically-create-html.html
+- _posts/2008-09-22-moss-custom-cqwp-exploring-mulitchoice.html
+- _posts/2008-09-18-sharepoint-moss-2007-walkthough.html
+- _posts/2008-09-18-sharepoint-moss-2007-enabling-usage.html
+- _posts/2008-09-08-sharepoint-moss-2007-custom-redirect.html
+- _posts/2008-07-25-sharepoint-moss-2007-shareoint-designer.html
+- _posts/2008-07-11-generating-html-on-fly-with-javascript.html
+- _posts/2008-06-24-sharepoint-moss-2007-more-content.html
+- _posts/2008-06-19-sharepoint-moss-2007-caml-madness.html
+- _posts/2008-06-17-sharepoint-moss-2007-adding-custom-code.html
+- _posts/2008-06-11-sharepoint-moss-2007-request-for.html
+- _posts/2008-06-09-aspnet-20-data-sources-and-connect.html
+- _posts/2008-06-05-sharepoint-moss-2007-error-hresult.html
+- _posts/2008-05-28-sharepoint-moss-2007-request-for.html
+- _posts/2008-04-29-sharepoint-moss-2007-customizing.html
+- _posts/2008-04-11-sharepoint-moss-2007-enabling-both-http.html
+- _posts/2008-03-26-sharepoint-moss-2007-troubleshooting.html
+- _posts/2008-03-17-vim-regex-cheatsheet.html
+- _posts/2008-03-14-sharepoint-moss-2007-why-is-my-new.html
+- _posts/2008-03-11-sharepoint-moss-2007-moving-content.html
+- _posts/2008-03-10-sharepoint-moss-2007-cannot-create.html
+- _posts/2008-03-06-sharepoint-moss-2007-howto-setup-ssl.html
+- _posts/2008-03-06-sharepoint-moss-2007-deploying-content.html
+- _posts/2008-03-04-sharepoint-moss-2007-can-we-create.html
+- _posts/2008-03-03-wss-30-does-not-do-master-template.html
+- _posts/2008-02-21-sharepoint-moss-2007-using-alternate.html
+- _posts/2008-02-21-sharepoint-moss-2007-hide-masterpage.html
+- _posts/2008-02-13-sharepoint-moss-2007-web-publishing.html
+- _posts/2008-02-13-sharepoint-moss-2007-no-built-in-flash.html
+- _posts/2008-02-12-sharepoint-moss-2007-enabling-smple.html
+- _posts/2008-02-11-sharepoint-moss-2007-custom-master-page.html
+- _posts/2008-02-11-creating-new-site-collection-in.html
+- _posts/2008-02-08-managing-moss-2007-creating-new-site.html
+- _posts/2008-02-08-managing-moss-2007-backup-and-restore.html
+- _posts/2007-02-19-stripping-extended-ascii-characters.html
+- _posts/2007-01-15-simple+cfm+form+submitting+to+a+database.html
+- _posts/2006-01-09-sql-parent-child-relationship-trees.html
+- _posts/2005-12-02-uml.html
+- _posts/2005-11-28-dhtml-tableless-layouts-using-css.html
+- _posts/2005-11-28-dhtml-showinghiding-table-rows-in.html
+- _posts/2005-11-18-tfo-project.html
+hide_body: false
+fields:
+- name: title
+  label: Title
+  type: textarea
+  hidden: false
+  default: ''
+- name: date
+  label: Date
+  type: datetime
+  hidden: false
+  default: ''
+- name: author
+  label: Author
+  type: text
+  hidden: false
+  default: ''
+- name: tags
+  label: Tags
+  type: tag_list
+  hidden: false
+  default: ''
+- name: modified_time
+  label: Modified time
+  type: datetime
+  hidden: false
+  default: ''
+- name: blogger_id
+  label: Blogger id
+  type: text
+  hidden: false
+  default: ''
+- name: blogger_orig_url
+  label: Blogger orig url
+  type: text
+  hidden: false
+  default: ''
+- name: layout
+  label: Layout
+  type: text
+  hidden: false
+  default: single
+- name: thumbnail
+  label: Thumbnail
+  type: textarea
+  hidden: false
+  default: ''
+- name: author_profile
+  label: Author profile
+  type: boolean
+  hidden: false
+  default: true
+- name: read_time
+  label: Read time
+  type: boolean
+  hidden: false
+  default: true
+- name: comments
+  label: Comments
+  type: text
+  hidden: false
+  default: 
+- name: share
+  label: Share
+  type: boolean
+  hidden: false
+  default: true
+- name: related
+  label: Related
+  type: boolean
+  hidden: false
+  default: true
